@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro-Taller</title>
+    <link rel="stylesheet" href="style/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Registro de Vehículos del Taller</h1>
+    </header>
+
+    <main class="container">
+      <!-- Pantalla de Inicio -->
+      <section id="landing-screen" class="app-screen active">
+        <h2>Bienvenido</h2>
+        <div class="landing-buttons">
+          <button id="btn-new-vehicle" class="action-button">
+            Añadir Nuevo Vehículo
+          </button>
+          <button id="btn-pending-vehicles" class="action-button">
+            Ver Vehículos Pendientes
+          </button>
+        </div>
+      </section>
+
+      <!-- Pantalla de Selección de Marca -->
+      <section id="brand-selection-screen" class="app-screen">
+        <h2>Seleccione la Marca</h2>
+        <div id="brand-logo-grid" class="logo-grid">
+          <!-- Logos se cargarán aquí por JavaScript -->
+        </div>
+        <button class="btn-back" data-target="landing-screen">← Volver</button>
+      </section>
+
+      <!-- Pantalla de Datos del Vehículo -->
+      <section id="vehicle-details-screen" class="app-screen">
+        <h2>Datos del Vehículo</h2>
+        <form id="vehicleDetailsForm">
+          <div class="form-group">
+            <label for="marca-display">Marca Seleccionada:</label>
+            <!-- Logo y Marca se mostrarán aquí, no se editan -->
+            <div id="selected-brand-info" class="selected-info"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="modelo">Modelo:</label>
+            <input
+              type="text"
+              id="modelo"
+              required
+              placeholder="Ej: Golf, A4, Serie 3"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="anio">Año:</label>
+            <input
+              type="number"
+              id="anio"
+              required
+              min="1900"
+              max="2099"
+              placeholder="Ej: 2023"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="motor">Motor (Opcional):</label>
+            <input type="text" id="motor" placeholder="Ej: 2.0 TSI" />
+          </div>
+
+          <div class="form-group">
+            <label for="placas">Placas:</label>
+            <input
+              type="text"
+              id="placas"
+              required
+              placeholder="Ej: ABC-1234"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="fotos">Fotos del vehículo (opcional):</label>
+            <input type="file" id="fotos" accept="image/*" multiple />
+          </div>
+
+          <button type="submit">Siguiente (Datos del Cliente)</button>
+        </form>
+        <button class="btn-back" data-target="brand-selection-screen">
+          ← Volver
+        </button>
+      </section>
+
+      <!-- Pantalla de Datos del Cliente y Falla/Diagnóstico -->
+      <section id="customer-details-screen" class="app-screen">
+        <h2>Datos del Cliente y Servicio</h2>
+        <form id="customerDetailsForm">
+          <div class="form-group">
+            <label for="cliente">Nombre del Cliente:</label>
+            <input
+              type="text"
+              id="cliente"
+              required
+              placeholder="Ej: Juan Pérez"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="falla">Falla Reportada:</label>
+            <textarea
+              id="falla"
+              required
+              placeholder="Breve descripción de la falla..."
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="diagnostico">Diagnóstico (Opcional):</label>
+            <textarea
+              id="diagnostico"
+              placeholder="Diagnóstico inicial del mecánico..."
+            ></textarea>
+          </div>
+
+          <button type="submit">Registrar Vehículo</button>
+        </form>
+        <button class="btn-back" data-target="vehicle-details-screen">
+          ← Volver
+        </button>
+      </section>
+
+      <!-- Pantalla de Vehículos Pendientes -->
+      <section id="pending-vehicles-screen" class="app-screen">
+        <h2>Vehículos Pendientes de Entrega</h2>
+        <div id="pending-vehicles-container" class="vehicles-container">
+          <!-- Los vehículos pendientes se mostrarán aquí -->
+          <p class="empty-message">No hay vehículos pendientes actualmente.</p>
+        </div>
+        <button class="btn-back" data-target="landing-screen">← Volver</button>
+      </section>
+
+      <!-- Pantalla de Detalle de un Vehículo -->
+      <section id="vehicle-detail-screen" class="app-screen">
+        <h2>Detalle del Vehículo</h2>
+        <div id="vehicle-detail-content">
+          <!-- Detalles del vehículo seleccionado se cargarán aquí por JS -->
+          <!-- Incluirá el botón "Marcar como Entregado" si está pendiente -->
+        </div>
+        <button class="btn-back" data-target="pending-vehicles-screen">
+          ← Volver
+        </button>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2023 Registro-Taller. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts al final para mejorar la carga -->
+    <script src="utils/date.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
