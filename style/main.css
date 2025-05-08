@@ -16,12 +16,58 @@ body {
 }
 
 header {
-    background: linear-gradient(to right, #007bff, #0056b3); /* Blue gradient */
+    background: linear-gradient(to right, #007bff, #0056b3);
     color: #fff;
-    padding: 1.5rem 0;
-    text-align: center;
+    /* Ajusta el padding horizontal para dar espacio a los lados si el contenido no está centrado */
+    padding: 1.5rem 20px; /* Añadimos padding horizontal */
+    text-align: center; /* Este text-align no afecta a los hijos flex items directamente, puedes quitarlo si quieres */
     margin-bottom: 30px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row; /* <-- ¡CAMBIADO a row! */
+    align-items: center; /* Alinea verticalmente los items (logo y h1) */
+    justify-content: center; /* Centra el contenido horizontalmente (logo + h1) */
+    gap: 15px; /* Espacio entre el logo y el título */
+}
+
+/* Ajusta el margen del logo si usas gap */
+header .header-logo {
+    max-width: 100px; /* Usa la medida que ya te sirvió */
+    height: auto;
+    display: block;
+    /* margin-bottom: 0; /* Asegúrate de que no haya margen inferior que lo separe del texto */
+}
+
+header h1 {
+    margin: 0; /* Asegura que el h1 no tenga margen superior que lo separe del logo */
+    font-size: 2rem; /* Ajusta el tamaño del título si es necesario */
+}
+
+/* Ajusta responsive si es necesario */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 15px; /* Ajusta padding */
+        gap: 10px; /* Ajusta gap */
+    }
+     header .header-logo {
+         max-width: 50px; /* Ajusta aquí */
+     }
+     header h1 {
+         font-size: 1.6rem; /* Ajusta aquí */
+     }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.8rem 10px;
+        gap: 8px;
+    }
+    header .header-logo {
+        max-width: 40px; /* Ajusta aquí */
+    }
+    header h1 {
+        font-size: 1.4rem; /* Ajusta aquí */
+    }
 }
 
 .container {
