@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Google Apps Script Web App URL ---
     // PEGA AQUÍ LA URL QUE TE DIO GOOGLE APPS SCRIPT AL DESPLEGAR
-    const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwRgfVOAjrFCM7dKt66PZ0RvIryggLXLxNupsqQJihGhPGPIetsOsGSFn9_zw9tGf2uXg/exec';
+    const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxyYcd-ybvftY0GNrmQEJP_5vuUhoqTHnpl8hCyO85FlHdJrOj9aKL7T6l5Row-KiBSxA/exec';
 
 
     // --- Navigation Function ---
